@@ -1,0 +1,22 @@
+.general-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+}
+
+.user-img {
+    width: 30%;
+}
+
+.user-img p {
+    text-align: justify;
+}
+
+.personal-details p {
+    margin: 0;
+    padding: 0;
+}
+
+.personal-details h3{
+    margin-bottom: 10px;
+}
