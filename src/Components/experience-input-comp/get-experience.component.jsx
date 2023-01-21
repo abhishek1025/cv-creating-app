@@ -28,10 +28,9 @@ class GetExperienceFields extends Component {
                 this.props.getExperienceInfo(this.state.experiences);
 
                 const allInputEl = document.querySelectorAll('input');
-
-                document.querySelector('textarea').value = '';
                 for (let i = 0; i < allInputEl.length; i++) {
                     allInputEl[i].value = '';
+                    document.querySelector('textarea').value = '';
                 };
             }
         )

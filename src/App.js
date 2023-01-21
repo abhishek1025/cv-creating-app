@@ -1,20 +1,14 @@
 import React from "react";
-import { Component } from "react";
+import ReactToPrint from 'react-to-print';
+
 
 
 import GeneralInfoComponent from './Components/General-Info-input-comp/generalInfo.component.jsx';
-import CvGeneralInfoSec from "./Components/cv-general-info-comp/cv-general-info-sec.component.jsx";
-
 import GetExperienceFields from "./Components/experience-input-comp/get-experience.component.jsx";
-
-import CvExperienceField from "./Components/cv-experience-fields/cv-experience-fields.component.jsx";
-
 import GetEducationDetails from "./Components/get-education-info-comp/getEducattion-info.component.jsx";
-
-import CvEducationFields from "./Components/cv-education-details/cv-education-fields.component.jsx";
-
 import './App.css';
-class App extends Component {
+import CV from "./Components/cv/cv.component.jsx";
+class App extends React.PureComponent {
 
     constructor() {
         super();
@@ -43,9 +37,6 @@ class App extends Component {
         this.setState({ educationDetails })
     }
 
-
-
-
     render() {
 
         return (
@@ -64,26 +55,23 @@ class App extends Component {
                         <GetEducationDetails getEducationInfo={this.getEducationInfo} />
                     </div>
 
-                    <div className="cv-format-wrapper">
 
-                        <div className="cv-format" id="cv">
-                            <CvGeneralInfoSec useInfo={this.state.generalInfo} />
-
-                            <hr />
-                            <h1 className="cv-heading">Experience</h1>
-                            <CvExperienceField experienceInfo={this.state.experienceInfo} />
-
-                            <br />
-                            <hr />
-
-                            <h1 className="cv-heading">Education</h1>
-                            <CvEducationFields educationDetails={this.state.educationDetails} />
-
+                    <div style={{ width: '55%' }}>
+                        <div style={{ border: '1px solid black' }}>
+                            <CV cvInfo={this.state} ref={el => (this.componentRef = el)} />
                         </div>
+
+                        <ReactToPrint
+                            trigger={() => {
+                                return <button className="cv-download-btn">Download CV</button>;
+                            }}
+                            content={() => this.componentRef}
+                        />
 
                     </div>
 
                 </div>
+
 
             </div>
         )
@@ -93,3 +81,5 @@ class App extends Component {
 }
 
 export default App;
+
+

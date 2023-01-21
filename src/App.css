@@ -8,17 +8,7 @@
   width: 30%;
 }
 
-.cv-format-wrapper {
-  width: 55%;
-}
 
-.cv-format {
-  border: 1px solid black;
-}
-
-.cv-heading {
-  padding-left: 80px;
-}
 
 .app-heading {
   text-align: center;
@@ -72,7 +62,7 @@ input[type='date'] {
   margin-left: 20px;
 }
 
-.generate-pdf button{
+.cv-download-btn {
   margin: 40px 0;
   width: 150px;
   height: 35px;

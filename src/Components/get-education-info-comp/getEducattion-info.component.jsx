@@ -34,8 +34,6 @@ class GetEducationDetails extends Component {
                 for (let i = 0; i < allInputEl.length; i++) {
                     allInputEl[i].value = '';
                 };
-
-                console.log(this.state.educationDetails);
             }
         )
 
